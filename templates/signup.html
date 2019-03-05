@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+<script type="text/javascript" src="../static/js/jQuery.js"></script>
+<script src="../static/js/signupMethod.js"></script>
+<title>WhereTo?</title>
+<h1><center><img src="https://i.imgur.com/kOBOzA6.png" ></center></h1>
+
+{% extends 'layout.html' %}
+{% block body %}
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <script>
+    $(function(){
+      $("#includedContent").load("includes/_formhelpers.html");
+    });
+    </script>
+  </head>
+
+  <body>
+     <div id="includedContent"></div>
+  </body>
+</html>
+
+{% from "includes/_formhelpers.html" import render_field %}
+<body>
+<h3>
+<form method="POST" action="">
+<br/><br/><i> <img src="https://i.imgur.com/Obx9Pa4.png"> </i> <br />
+    <br />
+    <br/><div class = "form-group"><br/>
+        {{render_field(form.name, class_="form-control")}}
+    <br/><br/><br/></div>
+    <div class = "form-group"><br/>
+        {{render_field(form.email, class_="form-control")}}
+    </div>
+    <br/><br/><div class = "form-group"><br/>
+        {{render_field(form.password, class_="form-control")}}
+    </div>
+    <br/><br/> <div class = "form-group"><br/>
+        {{render_field(form.confirm, class_="form-control")}}
+    </div>
+    <br/><br/> <div class = "form-group"><br/>
+        {{render_field(form.venue, class_="form-control")}}<br/><br/>
+</div>
+
+
+
+<font size = "4"><i>Admin Account:&emsp;</i></font>
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label><br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+    <!--<p><input type="submit" class="btn btn-primary" value="Submit"><img src="https://i.imgur.com/sl83vOR.png"></p>-->
+    <!--<button id="button" class="btn btn-lg btn-primary btn-block" type="button"><img src="https://i.imgur.com/sl83vOR.png"></button>-->
+        <p><input type="image" src="https://i.imgur.com/sl83vOR.png" class="btn btn-primary" value="SIGN-UP"></p>
+</form>
+</h3>
+
+</body>
+{% endblock %}
